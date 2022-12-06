@@ -1,3 +1,4 @@
+source("/Users/sarataheri/GitHub/OptimalAdjustmentSet/exhaustive_backdoor_search.R")
 # Simple case without latent variables
 g_simple <- dagitty( "dag { Z1 -> Z2;
                             Z2 -> Z3;
