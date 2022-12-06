@@ -171,8 +171,14 @@ gen_data <- function(nds = 1000, #number of data sets
   return(data)
 }
 
-a = find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g, exposure = "X", exposure_intv_value = 0, outcome = "Y", query = "expectation", method = "lm", synthetic_data = gen_data())
-b = find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g, exposure = "X", exposure_intv_value = 0, outcome = "Y", query = "ATE", method = "lm", synthetic_data = gen_data())
+find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g, exposure = "X",
+                                                     exposure_intv_value = 0,
+                                                     outcome = "Y",
+                                                     query = "ATE",
+                                                     method = "lm",
+                                                     synthetic_data = gen_data(),
+                                                     num_dp = 100,
+                                                     num_synthetic_data_sets = 100)
 ##################################################################################
 ##################################################################################
 ##################################################################################
@@ -205,7 +211,7 @@ g_covid <- dagitty( "dag {
 
 #all_valid_adjustment_sets = adjustmentSets( x = g_covid, exposure = "EGFR", outcome = "cytok" , type = "all")
 
-covid_data = readRDS("/Users/sarataheri/GitHub/Simplified_LVM/Covid_case_study/obs_data_list.RData")
+covid_data = readRDS("/Users/sarataheri/GitHub/OptimalAdjustmentSet/Covid_case_study/data/obs_data_list.RData")
 
 g = g_covid
 exposure = "EGFR"
@@ -241,7 +247,7 @@ g_IGF <- dagitty( "dag {
 
 all_valid_adjustment_sets = adjustmentSets( x = g_IGF, exposure = "AKT", outcome = "Erk" , type = "all")
 
-IGF_data = readRDS("/Users/sarataheri/GitHub/Simplified_LVM/IGF_case_study/data/IGF_obs_intv_data/observational_igf.RData")
+IGF_data = readRDS("/Users/sarataheri/GitHub/OptimalAdjustmentSet/IGF_case_study/data/observational_igf.RData")
 
 IGF_exp_lm_N20_K20 <- find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g_IGF,
                                                                    exposure = "AKT",
