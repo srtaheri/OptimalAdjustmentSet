@@ -37,8 +37,8 @@ def writefile(df,filename):
 #            }, pregeneration_frac=2, only_generated_data=True,
 #            gan_params = {"batch_size": 1000, "patience": 50, "epochs" : 500,}).generate_data_pipe(train, target,
 #                                           test, deep_copy=True, only_adversarial=False, use_adversarial=True)
-new_train = data.merge(data2, on='ATRN_HUMAN')
-writefile(new_train,'ov_gan/newtrain4ov.csv')
+new_train2 = new_train.merge(new_target, on='ATRN_HUMAN')
+writefile(new_train2,'ov_gan/newtrain4ov.csv')
 
 ############# analysis plots #################
 
@@ -47,15 +47,15 @@ for (columnName, columnData) in a.iteritems():
 
     axes[0].set_title('gan'+columnName)
     axes[1].set_title('original'+columnName)
-    new_train[columnName].hist(ax=axes[0],bins =50,range=(a[columnName].min()-1, a[columnName].max()+1))
-    data[columnName].hist(ax=axes[1],bins =50,range=(a[columnName].min()-1, a[columnName].max()+1))
+    new_train2[columnName].hist(ax=axes[0],bins =50,range=(new_train2[columnName].min()-1, new_train2[columnName].max()+1))
+    data[columnName].hist(ax=axes[1],bins =50,range=(new_train2[columnName].min()-1, new_train2[columnName].max()+1))
     plt.savefig('hist_compare_50'+columnName+'.png')
     plt.show()
 
 
-sns_plot = sns.pairplot(new_train.iloc[:, :10 ], height=2.5)
+sns_plot = sns.pairplot(new_train2.iloc[:, :10 ], height=2.5)
 
-cormat = new_train.corr()
+cormat = new_train2.corr()
 round(cormat,4)
 
 cormat = data.corr()
