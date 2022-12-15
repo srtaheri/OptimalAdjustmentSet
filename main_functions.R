@@ -12,6 +12,7 @@ library(doParallel)
 #install.packages("~/Downloads/ipw_1.0-11.tar.gz", repos = NULL, type = "source")
 library(WeightIt)
 library(dplyr)
+library("combinat") 
 
 n.cores = parallel::detectCores() - 1
 #create the cluster
@@ -156,7 +157,6 @@ find_ranked_var_and_query_est_for_all_valid_adj_sets = function(g, exposure, exp
   all_valid_adjustment_sets = adjustmentSets( x = g, exposure = exposure, outcome = outcome , type = "all")
   valid_adjustment_sets_names = sapply(all_valid_adjustment_sets, paste, collapse=",")
   
-  start_time = Sys.time() #
   query_est = list()
   var_est = c()
   for (adjSetIdx in 1:length(all_valid_adjustment_sets)) {
@@ -170,24 +170,8 @@ find_ranked_var_and_query_est_for_all_valid_adj_sets = function(g, exposure, exp
                                                                         synthetic_data = synthetic_data,
                                                                         num_dp = num_dp,
                                                                         num_synthetic_data_sets = num_synthetic_data_sets)
-    var_est = c(var_est, round(var(query_est[[adjSetIdx]]), digits=3))
+    var_est = c(var_est, var(query_est[[adjSetIdx]]))
   }
-  
-  
-  # query_est <- foreach(adjSetIdx=1:length(all_valid_adjustment_sets), .combine = 'c') %do% {
-  #   print(adjSetIdx)
-  #   find_query_est_for_given_adj_set(exposure = exposure,
-  #                                   exposure_intv_value = exposure_intv_value,
-  #                                   outcome = outcome,
-  #                                   query = query,
-  #                                   valid_adj_set = all_valid_adjustment_sets[[adjSetIdx]],
-  #                                   method = method,
-  #                                   synthetic_data = synthetic_data)
-  # }
-  #var_est = unlist(lapply(query_est, function(x) round(var(x), digits=3)))
-  end_time <- Sys.time() #
-  end_time - start_time #
-  
 
   names(var_est) = valid_adjustment_sets_names
   names(query_est) = valid_adjustment_sets_names
@@ -198,4 +182,150 @@ find_ranked_var_and_query_est_for_all_valid_adj_sets = function(g, exposure, exp
   
   output = list("sorted_adj_set_based_on_var" = sorted_var, "sorted_query_est" = sorted_query_est)
   return(output)
+}
+
+# Create all valid adjustment sets excluding latent variables
+## g: A DAG or ADMG in the dagitty format
+## exposure : The exposure/cause/treatment variable (target of intervention)
+## outcome : The effect/outcome variable
+all_valid_adj_sets <- function(g, exposure, outcome) {
+  
+  adj_minimal <- adjustmentSets(x = g, exposure = exposure, outcome = outcome, type = "minimal")
+  adj_canonical <- adjustmentSets(x = g, exposure = exposure, outcome = outcome, type = "canonical")
+  
+  result <- list()
+  for (i in 1:length(adj_minimal)) {
+    difference <- setdiff(adj_canonical[[1]], adj_minimal[[i]])
+    if(i>1 && sum(difference %in% adj_minimal[[i-1]]) > 0) {
+      difference <- difference[-which(difference %in% adj_minimal[[1]])]
+    }
+    my_combi <- unlist(lapply(1:length(difference),    # Get all combinations
+                              combinat::combn, 
+                              x = difference,
+                              simplify = FALSE), 
+                              recursive = FALSE)
+    my_combi_vars = lapply(my_combi,function(x) c(adj_minimal[[i]],x))
+    my_combi_vars[[length(my_combi_vars)+1]] <- adj_minimal[[i]]
+    result[[i]] <- my_combi_vars
+  }
+  return(result)
+}
+
+#Simplify the graph
+#The simplification rules are as follows:
+#1) Remove latent variable with no children from the graph
+#2) Remove an exogenous latent variable that has at most one child
+#3) Transform a latent variable with parents to an exogenous variable where all its parents are connected to its children
+#4) If U and W are latent variables where children of W are a subset of children of U, then, W can be removed.
+
+g <- dagitty( "dag { U1 [latent]
+                            U2 [latent]
+                            U3 [latent]
+                            U4 [latent]
+                            U5 [latent]
+                            Z1 -> Z2
+                            Z2 -> Z3
+                            Z3 -> Y
+                            Z1 -> X
+                            X -> Y;
+                            Z4 -> Z3
+                            Z4 -> Y
+                            X -> U1
+                            U2 -> Z1
+                            U2 -> Z2
+                            U3 -> Z1
+                            U3 -> Z2
+                            U3 -> Z3
+                            U5 -> Z3
+                            U5 -> Y
+                            U4 -> Y
+                            Z4 -> U5
+                            Z4 -> U5
+                            Z5 ->U5}" )
+g_string <- " U1 [latent]
+              U2 [latent]
+              U3 [latent]
+              U4 [latent]
+              U5 [latent]
+              Z1 -> Z2
+              Z2 -> Z3
+              Z3 -> Y
+              Z1 -> X
+              X -> Y
+              Z4 -> Z3
+              Z4 -> Y
+              X -> U1
+              U2 -> Z1
+              U2 -> Z2
+              U3 -> Z1
+              U3 -> Z2
+              U3 -> Z3
+              U5 -> Z3
+              U5 -> Y
+              U4 -> Y
+              Z4 -> U5
+              Z5 ->U5"
+
+generate_simplified_graph <- function(g, g_string) {
+  glines = lapply(strsplit(g_string, "\n"), trimws)
+  #find the latent nodes
+  e_from = c()
+  e_to = c()
+  latent_nodes = c()
+  for (line in glines[[1]]) {
+    if (grepl("->", line)) {
+      edge_splitted = lapply(strsplit(line, "->"), trimws)
+      e_from = c(e_from, edge_splitted[[1]][1])
+      e_to = c(e_to, edge_splitted[[1]][2])
+    }
+    if (grepl("latent", line)) {
+      latent_nodes = c(latent_nodes, strsplit(line, " ")[[1]][1])
+    }
+  }
+  #create a data fram for edges
+  edge_df = data.frame("from" = e_from, "to" = e_to)
+  remove_rows <- c()
+  add_edge_df = data.frame(matrix(nrow = 0, ncol = 2))
+  colnames(add_edge_df) = c("from", "to")
+  lt_children_list <- list()
+  #Apply rule 1, 2, 3
+  for (lt in latent_nodes) {
+    pars = parents(g, lt)
+    chils = children(g, lt)
+    if(length(chils)>0) {
+      lt_children_list[[lt]] = chils
+    }
+    for (rowIdx in 1:nrow(edge_df)) {
+      # Rule 1 & 2
+      if ((edge_df[rowIdx, "from"] == lt && length(chils) == 1) || (edge_df[rowIdx, "to"] == lt && length(chils) == 0)) {
+        remove_rows <- c(remove_rows, rowIdx)
+      }
+      if (length(pars) > 0 && edge_df[rowIdx, "to"] == lt && length(chils) >0) {
+        remove_rows <- c(remove_rows, rowIdx)
+        df = data.frame("from" = edge_df[rowIdx, "from"], "to" = chils)
+        add_edge_df = rbind(add_edge_df, df)
+      }
+    }
+  }
+  edge_df = edge_df[-remove_rows,]
+  edge_df = rbind(edge_df, add_edge_df)
+  rownames(edge_df) = seq(1:nrow(edge_df))
+  remove_rows = c()
+  #Apply rule 4
+  for (rowIdx in 1:nrow(edge_df)) {
+    for (lt1_idx in 1:(length(lt_children_list)-1)){
+      #print(lt1_idx)
+      for (lt2_idx in (lt1_idx+1):length(lt_children_list)) {
+        #print(lt2_idx)
+        if(edge_df[rowIdx, "from"] == names(lt_children_list)[lt1_idx]  && sum(lt_children_list[[lt1_idx]] %in% lt_children_list[[lt2_idx]]) == length(lt_children_list[[lt1_idx]])) {
+          remove_rows = c(remove_rows, rowIdx)
+        }
+      }
+  }
+  }  
+  edge_df = edge_df[-remove_rows,]
+  edge_df = rbind(edge_df, add_edge_df)
+  rownames(edge_df) = seq(1:nrow(edge_df))
+  
+
 }
