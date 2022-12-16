@@ -27,6 +27,9 @@ g_covid <- dagitty( "dag {
 
 covid_data = readRDS("/Users/sarataheri/GitHub/OptimalAdjustmentSet/Covid_case_study/data/obs_data_list.RData")
 
+#covid_all_adj <- adjustmentSets(g_covid, exposure = "EGFR", outcome = "cytok", type = "all")
+#saveRDS(covid_all_adj, "/Users/sarataheri/GitHub/OptimalAdjustmentSet/Covid_case_study/data/covid_all_adj.RData")
+covid_all_adj <- readRDS("/Users/sarataheri/GitHub/OptimalAdjustmentSet/Covid_case_study/data/covid_all_adj.RData")
 # Get the results
 covid_ATE_lm_N50_K100 = find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g_covid,
                                                                     exposure = "EGFR",
