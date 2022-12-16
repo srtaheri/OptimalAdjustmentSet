@@ -1,49 +1,329 @@
-gprep = "Z3 [latent]
-         Z1 -> Z2
-         Z3 -> Y
-         Z3 -> Z2
-         Z1 -> X
-         X -> Y
-         Z4 -> X"
-glines = lapply(strsplit(gprep, "\n"), trimws)
-
-e_from = c()
-e_to = c()
-latent_nodes = c()
-for (line in glines[[1]]) {
-  if (grepl("->", line)) {
-    edge_splitted = lapply(strsplit(line, "->"), trimws)
-    e_from = c(e_from, edge_splitted[[1]][1])
-    e_to = c(e_to, edge_splitted[[1]][2])
-  }
-  if (grepl("latent", line)) {
-    latent_nodes = c(latent_nodes, strsplit(line, " ")[[1]][1])
-  }
+g_string = "dag {
+chiX [latent]
+citX [latent]
+gcvB [latent]
+appY -> appA
+appY -> appB
+appY -> appX
+appY -> hyaA
+appY -> hyaB
+appY -> hyaF
+arcA -> aceE
+arcA -> appY
+arcA -> citX
+arcA -> cydD
+arcA -> dpiA
+arcA -> dpiB
+arcA -> fnr
+arcA -> gcvB
+arcA -> hyaA
+arcA -> hyaB
+arcA -> hyaF
+arcA -> mdh
+arcA -> rpoS
+btsR -> mdh
+chiX -> dpiA
+chiX -> dpiB
+citX -> dpiB
+cra -> cyoA
+crp -> aceE
+crp -> cirA
+crp -> citX
+crp -> cyoA
+crp -> dcuR
+crp -> dpiA
+crp -> dpiB
+crp -> exuT
+crp -> fur
+crp -> gadX
+crp -> mdh
+crp -> oxyR
+crp -> srIR
+crp <-> fis
+cspA -> hns
+dcuR -> dpiA
+dcuR -> dpiB
+dpiA -> appY
+dpiA -> citC
+dpiA -> citD
+dpiA -> citX
+dpiA -> dpiB
+dpiA -> exuT
+dpiA -> mdh
+dsrA -> hns
+dsrA -> lrp
+dsrA -> rpoS
+fis -> cyoA
+fis -> gadX
+fis -> hns
+fis -> hyaA
+fis -> hyaB
+fis -> hyaF
+fnr -> aceE
+fnr -> amtB
+fnr -> aspC
+fnr -> citX
+fnr -> cydD
+fnr -> cyoA
+fnr -> dcuR
+fnr -> dpiA
+fnr -> dpiB
+fnr -> gadX
+fnr -> hcp
+fnr -> narL
+fur -> amtB
+fur -> aspC
+fur -> cirA
+fur -> cyoA
+fur -> fnr
+gadX -> amtB
+gadX -> hns
+gcvB -> lrp
+gcvB -> oxyR
+gcvB -> ydeO
+hns -> appY
+hns -> srIR
+hns -> ydeO
+hns -> yjjQ
+ihfA -> crp
+ihfA -> fnr
+ihfA -> ihfB
+ihfB -> fnr
+iscR -> hyaA
+iscR -> hyaB
+iscR -> hyaF
+lrp -> aspC
+lrp -> soxS
+modE -> narL
+narL -> citX
+narL -> cydD
+narL -> dcuR
+narL -> dpiA
+narL -> dpiB
+narL -> hcp
+narL -> hyaA
+narL -> hyaB
+narL -> hyaF
+narP -> hyaA
+narP -> hyaB
+narP -> hyaF
+oxyR -> fur
+oxyR -> hcp
+phoB -> cra
+rpoD -> aceE
+rpoD -> appY
+rpoD -> cirA
+rpoD -> crp
+rpoD -> cydD
+rpoD -> dcuR
+rpoD -> dsrA
+rpoD -> fis
+rpoD -> fnr
+rpoD -> fur
+rpoD -> gcvB
+rpoD -> hns
+rpoD -> hyaA
+rpoD -> hyaB
+rpoD -> hyaF
+rpoD -> ihfB
+rpoD -> mdh
+rpoD -> narL
+rpoD -> oxyR
+rpoD -> phoB
+rpoD -> soxS
+rpoD -> srIR
+rpoD -> ydeO
+rpoD -> yjjQ
+rpoH -> cra
+rpoS -> aceE
+rpoS -> appY
+rpoS -> hyaA
+rpoS -> hyaB
+rpoS -> hyaF
+rpoS -> ihfA
+rpoS -> ihfB
+rpoS -> oxyR
+soxS -> fur
+srIR -> gutM
+ydeO -> hyaA
+ydeO -> hyaB
+ydeO -> hyaF
 }
+"
+g <- dagitty(g_string)
 
-reg_edge_df = data.frame("from"=e_from, "to"=e_to)
+simplified_g_string <- generate_simplified_graph_string(g = g, g_string = g_string)
 
-lt_edge_df = data.frame(matrix(nrow = 0, ncol = 3))
-colnames(lt_edge_df) = c("from", "to")
+dagitty_input_str <- generate_dagitty_input_string(g_string = simplified_g_string)
 
-for (lt in latent_nodes) {
-  lt_indices = which(reg_edge_df[,"from"] == lt)
-  lt_edges = reg_edge_df[lt_indices,]
-  lt_children = lt_edges[,"to"]
-  new_edges = t(as.data.frame(combn(lt_children, 2)))
-  colnames(new_edges) = c("from", "to")
-  lt_edge_df = rbind(lt_edge_df, new_edges)
-  reg_edge_df = reg_edge_df[-lt_indices,]
+mydag = dagitty(dagitty_input_str)
+
+start_time = Sys.time()
+mydag_adj_all = adjustmentSets(x = mydag, exposure = "fur", outcome = "dpiA", type = "all")
+end_time = Sys.time()
+end_time - start_time
+
+
+library(dagitty)
+library(ggdag)
+library(ggplot2)
+g_string <- "dag {
+chiX [latent]
+citX [latent]
+gcvB [latent]
+appY -> appA
+appY -> appB
+appY -> appX
+appY -> hyaA
+appY -> hyaB
+appY -> hyaF
+arcA -> aceE
+arcA -> appY
+arcA -> citX
+arcA -> cydD
+arcA -> dpiA
+arcA -> dpiB
+arcA -> fnr
+arcA -> gcvB
+arcA -> hyaA
+arcA -> hyaB
+arcA -> hyaF
+arcA -> mdh
+arcA -> rpoS
+btsR -> mdh
+chiX -> dpiA
+chiX -> dpiB
+citX -> dpiB
+cra -> cyoA
+crp -> aceE
+crp -> cirA
+crp -> citX
+crp -> cyoA
+crp -> dcuR
+crp -> dpiA
+crp -> dpiB
+crp -> exuT
+crp -> fur
+crp -> gadX
+crp -> mdh
+crp -> oxyR
+crp -> srIR
+crp <-> fis
+cspA -> hns
+dcuR -> dpiA
+dcuR -> dpiB
+dpiA -> appY
+dpiA -> citC
+dpiA -> citD
+dpiA -> citX
+dpiA -> dpiB
+dpiA -> exuT
+dpiA -> mdh
+dsrA -> hns
+dsrA -> lrp
+dsrA -> rpoS
+fis -> cyoA
+fis -> gadX
+fis -> hns
+fis -> hyaA
+fis -> hyaB
+fis -> hyaF
+fnr -> aceE
+fnr -> amtB
+fnr -> aspC
+fnr -> citX
+fnr -> cydD
+fnr -> cyoA
+fnr -> dcuR
+fnr -> dpiA
+fnr -> dpiB
+fnr -> gadX
+fnr -> hcp
+fnr -> narL
+fur -> amtB
+fur -> aspC
+fur -> cirA
+fur -> cyoA
+fur -> fnr
+gadX -> amtB
+gadX -> hns
+gcvB -> lrp
+gcvB -> oxyR
+gcvB -> ydeO
+hns -> appY
+hns -> srIR
+hns -> ydeO
+hns -> yjjQ
+ihfA -> crp
+ihfA -> fnr
+ihfA -> ihfB
+ihfB -> fnr
+iscR -> hyaA
+iscR -> hyaB
+iscR -> hyaF
+lrp -> aspC
+lrp -> soxS
+modE -> narL
+narL -> citX
+narL -> cydD
+narL -> dcuR
+narL -> dpiA
+narL -> dpiB
+narL -> hcp
+narL -> hyaA
+narL -> hyaB
+narL -> hyaF
+narP -> hyaA
+narP -> hyaB
+narP -> hyaF
+oxyR -> fur
+oxyR -> hcp
+phoB -> cra
+rpoD -> aceE
+rpoD -> appY
+rpoD -> cirA
+rpoD -> crp
+rpoD -> cydD
+rpoD -> dcuR
+rpoD -> dsrA
+rpoD -> fis
+rpoD -> fnr
+rpoD -> fur
+rpoD -> gcvB
+rpoD -> hns
+rpoD -> hyaA
+rpoD -> hyaB
+rpoD -> hyaF
+rpoD -> ihfB
+rpoD -> mdh
+rpoD -> narL
+rpoD -> oxyR
+rpoD -> phoB
+rpoD -> soxS
+rpoD -> srIR
+rpoD -> ydeO
+rpoD -> yjjQ
+rpoH -> cra
+rpoS -> aceE
+rpoS -> appY
+rpoS -> hyaA
+rpoS -> hyaB
+rpoS -> hyaF
+rpoS -> ihfA
+rpoS -> ihfB
+rpoS -> oxyR
+soxS -> fur
+srIR -> gutM
+ydeO -> hyaA
+ydeO -> hyaB
+ydeO -> hyaF
 }
-rownames(reg_edge_df) = seq(1:nrow(reg_edge_df))
-rownames(lt_edge_df) = seq(1:nrow(lt_edge_df))
+"
+g <- dagitty(g_string)
 
-lt_edges_str = paste(apply(lt_edge_df, 1, function(x) paste0(x[1],"<->",x[2])), collapse=";\n")
+simplified_g_string <- generate_simplified_graph_string(g = g, g_string = g_string)
 
-reg_edges_str = paste(apply(reg_edge_df, 1, function(x) paste0(x[1],"->",x[2])), collapse = ";\n")
-
-dagitty_input_str = paste("dag {", reg_edges_str, ";\n", lt_edges_str, ";\n}", sep="")
-
+dagitty_input_str <- generate_dagitty_input_string(g_string = simplified_g_string)
 
 mydag = dagitty(dagitty_input_str)
 
@@ -54,18 +334,27 @@ mydag = dagitty(dagitty_input_str)
 
 
 
+all_valid_adj_sets <- function(g, exposure, outcome) {
+  
+  #adj_minimal <- adjustmentSets(x = g, exposure = exposure, outcome = outcome, type = "minimal")
+  forbidden_vars <- get_forbidden_vars(g = g, from = exposure, to = outcome)
+  covariates <- setdiff(names(g), forbidden_vars)
+  #adj_canonical <- adjustmentSets(x = g, exposure = exposure, outcome = outcome, type = "canonical")
+  my_combi <- unlist(lapply(1:length(covariates),    # Get all combinations
+                            combinat::combn, 
+                            x = covariates,
+                            simplify = FALSE), 
+                     recursive = FALSE)
+  
+  r = c()
+  for (my_combi_var_idx in 1:length(my_combi)) {
+    if(isAdjustmentSet(x = g, Z = my_combi[[my_combi_var_idx]], exposure = exposure, outcome = outcome) == FALSE) {
+      r = c(r,my_combi_var_idx)
+    }
+  }
+  if (length(r) > 0) {
+    my_combi <- my_combi[-r]
+  }
 
-
-reg_edge_df = cbind(reg_edge_df,data.frame("type" = rep("->", nrow(reg_edge_df))))
-lt_edge_df = cbind(lt_edge_df,data.frame("type" = rep("<->", nrow(lt_edge_df))))
-
-edge_df = rbind(reg_edge_df, lt_edge_df)
-
-tibble_edge_df = tibble(edge_df)
-# https://stackoverflow.com/questions/69134313/parsing-through-dataframe-to-create-a-string-in-r
-# convert_dag = function(df,V,W,E) {
-#   tibble_edge_df %>% mutate(
-#     txt = ifelse(v==V & w==W, paste(V,E,W), paste(v,e,w))
-#   ) %>% pull(txt) %>% paste(.,collapse = " ") %>%  paste('dag{',.,'}')
-# }
-# convert_dag(df, "d", "f", "->")
+  return(my_combi)
+}
