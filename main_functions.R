@@ -7,12 +7,11 @@ library(SuperLearner)
 library(ggplot2)
 library(AIPW)
 library(dagitty)
-library(parallel)
-library(doParallel)
 #install.packages("~/Downloads/ipw_1.0-11.tar.gz", repos = NULL, type = "source")
 library(WeightIt)
 library(dplyr)
-library("combinat") 
+library(combinat)
+library(ggplot2)
 
 n.cores = parallel::detectCores() - 1
 #create the cluster
@@ -32,8 +31,7 @@ foreach::getDoParWorkers()
 ## exposure : The exposure/cause/treatment variable (target of intervention)
 ## exposure_intv_value : The intervened value that the exposure takes. The default value is 0.
 ## outcome : The effect/outcome variable
-## query : The query of interest in the form of "ATE" (Average treatment effect) or "expectation" (E[outcome|do(exposure = exposure_intv_value)]) or "density" (P(outcome|do(exposure = exposure_intv_value))). Default is "ATE".
-## valid_adj_set : A valid adjustment set
+## query : The query of interest in the form of "ATE" (Average treatment effect) or "expectation" (E[outcome|do(exposure = exposure_intv_value)]). Default is "ATE".
 ## method: The method to estimate the causal query in the form of "lm" (linear model). Default is "lm"
 ## synthetic_data : A list of data sets. If not mentioned, by default linearly associated data is created
 ## num_dp : number of data points from the synthetic_data used to estimate the query and the variance. Default is 100.
@@ -148,7 +146,7 @@ find_query_est_for_given_adj_set <- function(exposure,  exposure_intv_value = 0,
 ## exposure : The exposure/cause/treatment variable (target of intervention)
 ## exposure_intv_value : The intervened value that the exposure takes. The default value is 0.
 ## outcome : The effect/outcome variable
-## query : The query of interest in the form of "ATE" (Average treatment effect) or "expectation" (E[outcome|do(exposure = exposure_intv_value)]) or "density" (P(outcome|do(exposure = exposure_intv_value))). Default is "ATE".
+## query : The query of interest in the form of "ATE" (Average treatment effect) or "expectation" (E[outcome|do(exposure = exposure_intv_value)]). Default is "ATE".
 ## method: The method to estimate the causal query in the form of "lm" (linear model). Default is "lm"
 ## synthetic_data : A list of data sets. If not mentioned, by default linearly associated data is created
 ## num_dp : number of data points from the synthetic_data used to estimate the query and the variance. Default is 100.
@@ -499,3 +497,9 @@ generate_dagitty_input_string <- function(g_string) {
   dagitty_input_str = paste("dag {", reg_edges_str, ";\n", lt_edges_str, ";\n}", sep="")
   return(dagitty_input_str)
 }
+
+# I want to write a function that takes the dagitty string, the cause, effect. It outputs a simplified graph where all the descendants
+# of the effect are removed and all the remaining single nodes are removed.
+
+#I want to change the functions, such that they take all the valid adjustment set as input
+
