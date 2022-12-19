@@ -1,7 +1,9 @@
+#This is EColi large where all the descendants of the effect and the single nodes (no edge is connected to them) are still there!
 EColi_dag <- dagitty("
 dag {
 chiX [latent]
 citX [latent]
+gcvB [latent]
 appY -> appA
 appY -> appB
 appY -> appX
@@ -80,6 +82,7 @@ gadX -> amtB
 gadX -> hns
 gcvB -> lrp
 gcvB -> oxyR
+gcvB -> ydeO
 hns -> appY
 hns -> srIR
 hns -> ydeO
@@ -150,4 +153,3 @@ ydeO -> hyaF
 }
 ")
 
-all_valid_adjustment_sets = adjustmentSets(x = EColi_dag, exposure = "fur", outcome = "dpiA" , type = "all")
