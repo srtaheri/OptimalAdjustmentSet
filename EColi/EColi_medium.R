@@ -88,10 +88,10 @@ obs_data = as.data.frame(obs_data)
 #Create interventional data
 intv_data <- as.numeric(data[which(data$names == "dpiA"), c("fur__delfur_dpd__1", "fur__delfur_fe2__1", "fur__delfur_fe2__2")])
 mean(intv_data)
+#saveRDS(intv_data, "/Users/sarataheri/GitHub/OptimalAdjustmentSet/EColi/data/intv_data.RData")
 
 #test
 lm <- lm(dpiA ~ fur + arcA + crp + ihfA + ihfB + rpoD, obs_data)
-
 dpiA_Given_fur <- coef(lm) ['(Intercept)'] + 
   coef(lm) ['arcA'] * obs_data$arcA +
   coef(lm) ['crp'] * obs_data$crp +
