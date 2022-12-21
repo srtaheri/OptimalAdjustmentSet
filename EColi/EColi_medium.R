@@ -84,7 +84,7 @@ obs_data = t(obs_data[,3:ncol(obs_data)])
 colnames(obs_data) = c("cra", "phoB", "dpiA", "fur", "modE", "lrp", "ihfB", "ihfA", "rpoS", "rpoD", "fis", "crp", "rpoH", "oxyR", "soxS", "arcA")
 rownames(obs_data) = seq(1:nrow(obs_data))
 obs_data = as.data.frame(obs_data)
-#saveRDS(obs_data, "/Users/sarataheri/GitHub/OptimalAdjustmentSet/EColi/data/obs_data.RData")
+write.csv(obs_data, "/Users/sarataheri/GitHub/OptimalAdjustmentSet/EColi/data/obs_data.cvs")
 #Create interventional data
 intv_data <- as.numeric(data[which(data$names == "dpiA"), c("fur__delfur_dpd__1", "fur__delfur_fe2__1", "fur__delfur_fe2__2")])
 mean(intv_data)
