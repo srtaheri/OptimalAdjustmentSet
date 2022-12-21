@@ -51,6 +51,8 @@ gen_data <- function(nds = 1000, #number of data sets
 }
 
 obs_data_list = gen_data(nds = 1000, ndp = 1000, seed = 10)
+#saveRDS(obs_data_list, "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/obs_data_list.RData")
+write.csv(obs_data_list[[1]], "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/illustrative_obs_data.csv")
 #GAN_data = read.csv("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/GAN_illustrative.csv")
 
 # Get the results
