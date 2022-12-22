@@ -51,43 +51,64 @@ gen_data <- function(nds = 1000, #number of data sets
 }
 
 obs_data_list = gen_data(nds = 1000, ndp = 1000, seed = 10)
+all_adj_set = adjustmentSets(x = g_simple, exposure = "X", outcome = "Y", type = "all")
 #saveRDS(obs_data_list, "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/obs_data_list.RData")
-write.csv(obs_data_list[[1]], "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/illustrative_obs_data.csv")
-#GAN_data = read.csv("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/GAN_illustrative.csv")
-
+#write.csv(obs_data_list[[1]], "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/illustrative_obs_data.csv")
+#GAN_data = read.csv("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/GAN_data_generation/GAN_illustrative_1.csv")
+#GAN_data = GAN_data[,-1]
 # Get the results
-simple_case_IPW_N500_K1000 <- find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g_simple,
+simple_case_IPW_ATE_real_N30_K1000 <- find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g_simple,
                                                                                          exposure = "X",
                                                                                          exposure_intv_value = 0,
                                                                                          outcome = "Y",
+                                                                                         all_valid_adj = all_adj_set,
                                                                                          query = "ATE",
                                                                                          method = "IPW",
                                                                                          synthetic_data = obs_data_list,
-                                                                                         num_dp = 500,
+                                                                                         num_dp = 30,
                                                                                          num_synthetic_data_sets = 1000)
 
-simple_case_AIPW_N500_K1000 <- find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g_simple,
+simple_case_AIPW_ATE_real_N30_K1000 <- find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g_simple,
                                                                                     exposure = "X",
                                                                                     exposure_intv_value = 0,
                                                                                     outcome = "Y",
+                                                                                    all_valid_adj = all_adj_set,
                                                                                     query = "ATE",
                                                                                     method = "AIPW",
                                                                                     synthetic_data = obs_data_list,
-                                                                                    num_dp = 500,
+                                                                                    num_dp = 30,
                                                                                     num_synthetic_data_sets = 1000)
 
-simple_case_lm_N500_K1000 <- find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g_simple,
+simple_case_lm_ATE_real_N30_K1000 <- find_ranked_var_and_query_est_for_all_valid_adj_sets(g = g_simple,
                                                                                     exposure = "X",
                                                                                     exposure_intv_value = 0,
                                                                                     outcome = "Y",
+                                                                                    all_valid_adj = all_adj_set,
                                                                                     query = "ATE",
                                                                                     method = "lm",
                                                                                     synthetic_data = obs_data_list,
-                                                                                    num_dp = 500,
+                                                                                    num_dp = 30,
                                                                                     num_synthetic_data_sets = 1000)
-saveRDS(simple_case_IPW_N500_K1000, "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/simple_case_IPW_N1000_K1000.RData")
+#Save the results
+saveRDS(simple_case_IPW_ATE_real_N30_K1000, "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_IPW_ATE_real_N30_K1000.RData")
+saveRDS(simple_case_AIPW_ATE_real_N30_K1000, "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_AIPW_ATE_real_N30_K1000.RData")
+saveRDS(simple_case_lm_ATE_real_N30_K1000, "/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_lm_ATE_real_N30_K1000.RData")
 
-simple_case_IPW_N1000_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/simple_case_IPW_N1000_K1000.RData")
-simple_case_AIPW_N1000_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/simple_case_AIPW_N1000_K1000.RData")
-simple_case_lm_N1000_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/simple_case_lm_N1000_K1000.RData")
+
+#Read the results
+simple_case_IPW_N1000_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_IPW_ATE_real_N1000_K1000.RData")
+simple_case_AIPW_N1000_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_AIPW_ATE_real_N1000_K1000.RData")
+simple_case_lm_N1000_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_lm_ATE_real_N1000_K1000.RData")
+
+simple_case_IPW_N500_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_IPW_ATE_real_N500_K1000.RData")
+simple_case_AIPW_N500_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_AIPW_ATE_real_N500_K1000.RData")
+simple_case_lm_N500_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_lm_ATE_real_N500_K1000.RData")
+
+simple_case_IPW_N100_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_IPW_ATE_real_N100_K1000.RData")
+simple_case_AIPW_N100_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_AIPW_ATE_real_N100_K1000.RData")
+simple_case_lm_N100_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_lm_ATE_real_N100_K1000.RData")
+
+simple_case_IPW_N30_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_IPW_ATE_real_N30_K1000.RData")
+simple_case_AIPW_N30_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_AIPW_ATE_real_N30_K1000.RData")
+simple_case_lm_N30_K1000 <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/illustrative_example/real_data/result/simple_case_lm_ATE_real_N30_K1000.RData")
 

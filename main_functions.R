@@ -150,9 +150,10 @@ find_query_est_for_given_adj_set <- function(exposure,  exposure_intv_value = 0,
 ## method: The method to estimate the causal query in the form of "lm" (linear model). Default is "lm"
 ## synthetic_data : A list of data sets. If not mentioned, by default linearly associated data is created
 ## num_dp : number of data points from the synthetic_data used to estimate the query and the variance. Default is 100.
-find_ranked_var_and_query_est_for_all_valid_adj_sets = function(g, exposure, exposure_intv_value = 0, outcome, query = "ATE", method = "lm", synthetic_data, num_dp = 100, num_synthetic_data_sets = 100) {
+find_ranked_var_and_query_est_for_all_valid_adj_sets = function(g, exposure, exposure_intv_value = 0, outcome, all_valid_adj, query = "ATE", method = "lm", synthetic_data, num_dp = 100, num_synthetic_data_sets = 100) {
   
-  all_valid_adjustment_sets = adjustmentSets( x = g, exposure = exposure, outcome = outcome , type = "all")
+  #all_valid_adjustment_sets = adjustmentSets( x = g, exposure = exposure, outcome = outcome , type = "all")
+  all_valid_adjustment_sets = all_valid_adj
   valid_adjustment_sets_names = sapply(all_valid_adjustment_sets, paste, collapse=",")
   
   query_est = list()
