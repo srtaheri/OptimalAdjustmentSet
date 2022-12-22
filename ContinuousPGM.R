@@ -50,8 +50,8 @@ cpd = R6Class("cpd",list(
     distribution = self$cpd$family$family
     invlinkfn = self$cpd$family$linkinv
     
-    if(!(distribution %in% c("gaussian","Gamma"))){
-      stop("Sampling only implemented for Normal and Gamma families")
+    if(!(distribution %in% c("gaussian","Gamma","binomial"))){
+      stop("Sampling only implemented for Normal, Gamma, Binomial families")
     }
     
     if(sum(is.na(xdata)) > 0){
@@ -75,6 +75,12 @@ cpd = R6Class("cpd",list(
       sigma = mu/alpha 
       
       y = rgamma(n,shape=alpha,scale=sigma)
+    }else if(distribution %in% c("binomial")){
+      mu = self$predict(xdata)
+      
+      n = length(mu)
+      
+      y = rbinom(n,1,mu)
     }
     
     xdata[[self$child]] = y
