@@ -13,19 +13,8 @@ library(dplyr)
 library(combinat)
 library(ggplot2)
 
-n.cores = parallel::detectCores() - 1
-#create the cluster
-my.cluster <- parallel::makeCluster(
-  n.cores, 
-  type = "PSOCK"
-)
-#register it to be used by %dopar%
-doParallel::registerDoParallel(cl = my.cluster)
 
-#check if it is registered (optional)
-foreach::getDoParRegistered()
-#how many workers are available? (optional)
-foreach::getDoParWorkers()
+
 # find the variance for a given adjustment set
 # Inputs:
 ## exposure : The exposure/cause/treatment variable (target of intervention)
@@ -41,7 +30,7 @@ find_query_est_for_given_adj_set <- function(exposure,  exposure_intv_value = 0,
     method = "lm"
   }
   data_nds = synthetic_data[seq(1:num_synthetic_data_sets)]
-  set.seed(20)
+  set.seed(20) #20
   data = lapply(data_nds, function(x) x[sample(1:nrow(x),num_dp),])
   
   if (method == "lm") {
@@ -67,10 +56,15 @@ find_query_est_for_given_adj_set <- function(exposure,  exposure_intv_value = 0,
   }
   if (method == "AIPW") {
     if(query == "ATE") {
-      estimate_query = unlist(lapply(data, function(x) {
-        AIPW_SL <- AIPW$new(Y = x[,outcome],
-                            A = x[,exposure],
-                            W = x[,adjSet],
+      estimate_query = c()
+      for (i in 1:num_synthetic_data_sets) {
+        # if(i == 167 || i == 240 || i == 323 || i == 470) {
+        #   next
+        # }
+        print(i)
+        AIPW_SL <- AIPW$new(Y = data[[i]][,outcome],
+                            A = data[[i]][,exposure],
+                            W = data[[i]][,adjSet],
                             Q.SL.library = c("SL.mean","SL.glm"),
                             g.SL.library = c("SL.mean","SL.glm"),
                             k_split = 3,
@@ -78,8 +72,22 @@ find_query_est_for_given_adj_set <- function(exposure,  exposure_intv_value = 0,
         suppressWarnings({
           AIPW_SL$stratified_fit()$summary()
         })
-        return(AIPW_SL$result["ATC Risk Difference","Estimate"])
-      }))
+        estimate_query = c(estimate_query, AIPW_SL$result["ATC Risk Difference","Estimate"])
+        
+      }
+      # estimate_query = unlist(lapply(data, function(x) {
+      #   AIPW_SL <- AIPW$new(Y = x[,outcome],
+      #                       A = x[,exposure],
+      #                       W = x[,adjSet],
+      #                       Q.SL.library = c("SL.mean","SL.glm"),
+      #                       g.SL.library = c("SL.mean","SL.glm"),
+      #                       k_split = 3,
+      #                       verbose=FALSE)
+      #   suppressWarnings({
+      #     AIPW_SL$stratified_fit()$summary()
+      #   })
+      #   return(AIPW_SL$result["ATC Risk Difference","Estimate"])
+      # }))
     }
   }
   
@@ -150,7 +158,19 @@ find_query_est_for_given_adj_set <- function(exposure,  exposure_intv_value = 0,
 ## method: The method to estimate the causal query in the form of "lm" (linear model). Default is "lm"
 ## synthetic_data : A list of data sets. If not mentioned, by default linearly associated data is created
 ## num_dp : number of data points from the synthetic_data used to estimate the query and the variance. Default is 100.
-find_ranked_var_and_query_est_for_all_valid_adj_sets = function(g, exposure, exposure_intv_value = 0, outcome, all_valid_adj, query = "ATE", method = "lm", synthetic_data, num_dp = 100, num_synthetic_data_sets = 100) {
+## num_synthetic_data_sets : number of synthetic data sets used to estimate the query and the variance. Default is 100.
+## round_var_decimal_place : inyeger value. The number of the decimal placd to round the variance. Default is 7.
+find_ranked_var_and_query_est_for_all_valid_adj_sets = function(g,
+                                                                exposure,
+                                                                exposure_intv_value = 0,
+                                                                outcome,
+                                                                all_valid_adj,
+                                                                query = "ATE",
+                                                                method = "lm",
+                                                                synthetic_data,
+                                                                num_dp = 100,
+                                                                num_synthetic_data_sets = 100,
+                                                                round_var_decimal_place = 7) {
   
   #all_valid_adjustment_sets = adjustmentSets( x = g, exposure = exposure, outcome = outcome , type = "all")
   all_valid_adjustment_sets = all_valid_adj
@@ -169,7 +189,7 @@ find_ranked_var_and_query_est_for_all_valid_adj_sets = function(g, exposure, exp
                                                                         synthetic_data = synthetic_data,
                                                                         num_dp = num_dp,
                                                                         num_synthetic_data_sets = num_synthetic_data_sets)
-    var_est = c(var_est, var(query_est[[adjSetIdx]]))
+    var_est = c(var_est, round(var(query_est[[adjSetIdx]]), round_var_decimal_place ))
   }
 
   names(var_est) = valid_adjustment_sets_names
@@ -502,5 +522,4 @@ generate_dagitty_input_string <- function(g_string) {
 # I want to write a function that takes the dagitty string, the cause, effect. It outputs a simplified graph where all the descendants
 # of the effect are removed and all the remaining single nodes are removed.
 
-#I want to change the functions, such that they take all the valid adjustment set as input
 
