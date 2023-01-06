@@ -1,3 +1,6 @@
+library(dagitty)
+library(ggdag)
+library(ggplot2)
 #This is EColi large where all the descendants of the effect and the single nodes (no edge is connected to them) are still there!
 EColi_dag <- dagitty("
 dag {
@@ -153,3 +156,4 @@ ydeO -> hyaF
 }
 ")
 
+ggdag(EColi_dag)

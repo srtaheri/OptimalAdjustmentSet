@@ -100,3 +100,32 @@ dpiA_Given_fur <- coef(lm) ['(Intercept)'] +
   coef(lm) ['rpoD'] * obs_data$rpoD
 summary(dpiA_Given_fur)
 var(dpiA_Given_fur)
+
+all_adj_set <- readRDS("/Users/sarataheri/GitHub/OptimalAdjustmentSet/EColi/all_valid_adj/mydag_adj_all_medium.RData")
+length(all_adj_set)
+
+start_time <- Sys.time()
+EColi_lm_exp_GAN_N260_K1000 <- find_ranked_var_and_query_est_for_all_valid_adj_sets(g = EColi_medium_dag,
+                                                                                    exposure = "fur",
+                                                                                    exposure_intv_value = 0,
+                                                                                    outcome = "dpiA",
+                                                                                    all_valid_adj = all_adj_set,
+                                                                                    query = "expectation",
+                                                                                    method = "lm",
+                                                                                    synthetic_data = GAN_data,
+                                                                                    num_dp = 260,
+                                                                                    num_synthetic_data_sets = 1000,
+                                                                                    round_var_decimal_place = 3)
+end_time <- Sys.time()
+end_time - start_time
+# Time difference of 2.02745 hours
+
+GAN_EColi_list <- list()
+for(i in 1:1000) {
+  GAN_data <- read.csv(paste("/Users/sarataheri/Github/OptimalAdjustmentSet/EColi/GAN_data/GAN_EColi_",i,".csv", sep=""))
+  GAN_EColi_list[[i]] <- GAN_data
+}
+saveRDS(GAN_EColi_list, "/Users/sarataheri/Github/OptimalAdjustmentSet/EColi/GAN_data/GAN_EColi_list.RData")
+
+a <- readRDS("/Users/sarataheri/Github/OptimalAdjustmentSet/EColi/GAN_data/GAN_EColi_list.RData")
+a[[915]] <- a[[914]]
