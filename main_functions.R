@@ -212,7 +212,7 @@ get_forbidden_vars <- function(g, from, to) {
   vars = unique(vars)
   forbidden_vars = vars
   for (var in vars) {
-    forbidden_vars = c(forbidden_vars, descendants(x = g, v = var))
+    forbidden_vars = c(forbidden_vars, dagitty::descendants(x = g, v = var))
   }
   forbidden_vars = unique(forbidden_vars)
   return(forbidden_vars)
@@ -402,7 +402,7 @@ generate_simplified_graph_string <- function(g, g_string) {
       latent_nodes = c(latent_nodes, strsplit(line, " ")[[1]][1])
     }
   }
-  #create a data fram for edges
+  #create a datafram for edges
   edge_df = data.frame("from" = e_from, "to" = e_to)
   remove_rows <- c()
   add_edge_df = data.frame(matrix(nrow = 0, ncol = 2))
@@ -410,8 +410,8 @@ generate_simplified_graph_string <- function(g, g_string) {
   lt_children_list <- list()
   #Apply rule 1, 2, 3
   for (lt in latent_nodes) {
-    pars = parents(g, lt)
-    chils = children(g, lt)
+    pars = dagitty::parents(g, lt)
+    chils = dagitty::children(g, lt)
     if(length(chils)>0) {
       lt_children_list[[lt]] = chils
     }
@@ -454,8 +454,13 @@ generate_simplified_graph_string <- function(g, g_string) {
     }
   }
   edge_df_str = paste(apply(edge_df, 1, function(x) paste0(x[1],"->",x[2])), collapse=";\n")
-  latent_nodes_string_str = paste(remaining_lt_nodes, " [latent]" , collapse=";\n")
-  dagitty_input_str = paste("dag {", "\n" , latent_nodes_string_str, edge_df_str, ";\n}", sep="")
+  if(length(remaining_lt_nodes) > 0) {
+    latent_nodes_string_str = paste(remaining_lt_nodes, " [latent]" , collapse=";\n")
+    dagitty_input_str = paste("dag {", "\n" , latent_nodes_string_str, edge_df_str, ";\n}", sep="")
+  }
+  
+  dagitty_input_str = paste("dag {", "\n", edge_df_str, ";\n}", sep="")
+  
   return(dagitty_input_str)
 }
 
