@@ -16,10 +16,6 @@ ecoli = ecoli %>% filter(oxyR>2.5,cra>4)
 
 EColi_dagitty_DAG <- dagitty("
 dag {
-arcA -> dpiA
-arcA -> fnr
-arcA -> oxyR
-arcA -> rpoS
 crp -> dcuR
 crp -> dpiA
 crp -> fur
@@ -34,7 +30,6 @@ narL -> dcuR
 narL -> dpiA
 oxyR -> fur
 phoB -> cra
-rpoD -> arcA
 rpoD -> crp
 rpoD -> dcuR
 rpoD -> dpiA
@@ -44,7 +39,6 @@ rpoD -> narL
 rpoD -> oxyR
 rpoD -> phoB
 rpoH -> cra
-rpoS -> oxyR
 }
 ")
 
@@ -57,18 +51,16 @@ ecoli_DAG = c("rpoD ~ 1",
               "rpoH ~ 1",
               "phoB ~ rpoD",
               "crp ~ rpoD",
-              "arcA ~ rpoD",
               "cra ~ phoB + rpoH",
-              "rpoS ~ arcA",
-              "oxyR ~ rpoD + crp + arcA + rpoS",
+              "oxyR ~ rpoD + crp",
               "fur ~ crp + rpoD + oxyR",
-              "fnr ~ fur + rpoD + arcA",
+              "fnr ~ fur + rpoD",
               "narL ~ fnr + rpoD",
               "dcuR ~ fnr + crp + rpoD + narL",
-              "dpiA ~ fur + crp + fnr + rpoD + arcA + dcuR + narL")
+              "dpiA ~ fur + crp + fnr + rpoD + dcuR + narL")
 
-nodenames = c("rpoD","rpoH","phoB","crp","arcA",
-              "cra","rpoS","oxyR","fur","fnr","narL",
+nodenames = c("rpoD","rpoH","phoB", "crp", "cra",
+              "oxyR","fur","fnr","narL",
               "dcuR","dpiA")
 names(ecoli_DAG) = nodenames
 
@@ -94,17 +86,16 @@ ecoli_families[["crp"]] = Gamma(link=log)
 ecoli_DAG["crp"] = "crp ~ s(rpoD)"
 ecoli_methods["crp"] = "gam"
 
-ecoli_families[["arcA"]] = Gamma(link=log)
 
 ecoli_families[["oxyR"]] = Gamma(link=log)
-ecoli_DAG["oxyR"] = "oxyR ~ s(rpoD) + crp + arcA + rpoS + I(log(rpoS))"
+ecoli_DAG["oxyR"] = "oxyR ~ s(rpoD) + crp"
 ecoli_methods["oxyR"] = "gam"
 
 ecoli_families[["fur"]] = Gamma(link=log)
 ecoli_DAG["fur"] = "fur ~ crp + rpoD + s(oxyR)"
 ecoli_methods["fur"] = "gam"
 
-ecoli_DAG["fnr"] = "fnr ~ s(fur) + s(rpoD) + s(arcA)"
+ecoli_DAG["fnr"] = "fnr ~ s(fur) + s(rpoD)"
 ecoli_methods["fnr"] = "gam"
 
 ecoli_families[["narL"]] = Gamma(link=log)
@@ -114,7 +105,7 @@ ecoli_methods["narL"] = "gam"
 ecoli_DAG["dcuR"] = "dcuR ~ s(fnr) + s(crp) + rpoD + narL + crp:narL + crp:rpoD"
 ecoli_methods["dcuR"] = "gam"
 
-ecoli_DAG["dpiA"] = "dpiA ~ fur + crp + s(fnr) + rpoD + s(arcA) + dcuR + narL + dcuR:arcA + rpoD:arcA + rpoD:dcuR"
+ecoli_DAG["dpiA"] = "dpiA ~ fur + crp + s(fnr) + rpoD + dcuR + narL + rpoD:dcuR"
 ecoli_methods["dpiA"] = "gam"
 
 
@@ -145,11 +136,11 @@ train_and_simulate = function(data,n_train=nrow(data),n_sim=n_train,n_datasets=1
 
 
 #Usage: train_and_simulate(data=ecoli,n_train=1000,n_sim=1000,n_datasets=1000) 
-EColi_BN_sim_N264 <- train_and_simulate(data=ecoli,n_train=nrow(ecoli),n_sim=nrow(ecoli),n_datasets=1000)
+EColi_BN_sim <- train_and_simulate(data=ecoli,n_train=nrow(ecoli),n_sim=nrow(ecoli),n_datasets=1000)
 
 for (i in 1:1000) {
-  EColi_BN_sim_N264[[i]] <- as.data.frame(EColi_BN_sim_N264[[i]])
-  EColi_BN_sim_N264[[i]] <- subset(EColi_BN_sim_N264[[i]], select = -c(rownum) )
+  EColi_BN_sim[[i]] <- as.data.frame(EColi_BN_sim[[i]])
+  EColi_BN_sim[[i]] <- subset(EColi_BN_sim[[i]], select = -c(rownum) )
 }
 
 saveRDS(EColi_BN_sim_N264, "/Users/sarataheri/GitHub/OptimalAdjustmentSet/EColi/BN_data/BN_data.RData")
