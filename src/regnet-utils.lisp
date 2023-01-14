@@ -3,6 +3,10 @@
       do (setf (gethash (get-slot-value g 'common-name) *genes*)
 	       (get-frame-name g)))
 
+(setq *blattner* (make-hash-table :test 'equal))
+(loop for g in (get-class-all-instances '|Genes|)
+      do (setf (gethash (get-slot-value g 'accession-1) *blattner*)
+	       (get-frame-name g)))
 
 (defun find-common-regulators (x y)
   (intersection

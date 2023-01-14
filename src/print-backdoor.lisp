@@ -1,4 +1,5 @@
-(load "regnet-utils.lisp")
+(compile-file "regnet-utils.lisp")
+(load "regnet-utils")
 (print-back-door "../data/fur-sodA-back-door.tab"
 		 (gethash "fur" *genes*)
 		 (gethash "sodA" *genes*)
