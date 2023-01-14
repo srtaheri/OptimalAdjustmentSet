@@ -445,13 +445,18 @@
   (tofile filename
 	  (let* ((confounders (get-confounders cause effect))
 		 (regnet (get-full-regnet genes)))
+	    (loop for path in (find-n-paths regnet cause effect n)
+		  do (format t "~{~A~^->~}~%"
+			     (mapcar name-func path)))
 	    (loop for node in confounders
 		  do (loop for path in (find-n-paths regnet node cause n)
 			   do (format t "~{~A~^->~}~%"
 				      (mapcar name-func path)))
 		     (loop for path in (find-n-paths regnet node effect n)
 			   do (format t "~{~A~^->~}~%"
-				   (mapcar name-func path)))))))
+				      (mapcar name-func path)))))))
+
+
 (defun get-full-regnet (genes)
   (loop for gene in genes
 	for regulatees = (remove gene (genes-regulated-by-gene gene) :test #'fequal)
