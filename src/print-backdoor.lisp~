@@ -1,0 +1,10 @@
+(setq genes (make-hash-table :test 'equal))
+(loop for g in (gcai '|Genes|)
+do (setf (gethash (get-slot-value g 'common-name) genes) (get-frame-name g)))
+
+(print-back-door "../data/fur-sodA-back-door.tab"
+		 (gethash "fur" genes)
+		 (gethash "sodA" genes)
+		 (get-class-all-instances '|Genes|)
+		 1
+		 #'get-symbol)
