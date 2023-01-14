@@ -1,0 +1,18 @@
+fur.nfsA <- dagitty("
+dag {
+fur->flhD->fliZ->gadE->gadX->hns->lrp->nac->marR->marA->rob->nfsA
+btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
+btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->marR->marA->rob->nfsA
+rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
+rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->marR->marA->rob->nfsA
+basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
+basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->marR->marA->rob->nfsA
+alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
+alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->marR->marA->rob->nfsA
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->marR->marA->rob->nfsA
+nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur
+nsrR->lrp->nac->marR->marA->rob->nfsA
+}
+")
+plot(fur.nfsA)

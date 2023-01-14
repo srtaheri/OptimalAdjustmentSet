@@ -1,18 +1,22 @@
-fur.sodA <- dagitty("
+fur.ybdZ <- dagitty("
 dag {
-fur->sodA
+fur->ybdZ
+
+
 btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->marR->marA->sodA
+btsR->csgD->fliZ->gadE->gadX->hns->ybdZ
 rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->marR->marA->sodA
+rcdA->csgD->fliZ->gadE->gadX->hns->ybdZ
 basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->marR->marA->sodA
+basR->csgD->fliZ->gadE->gadX->hns->ybdZ
 alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->marR->marA->sodA
+alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->ybdZ
 glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->marR->marA->sodA
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->ybdZ
+
+
 nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur
-nsrR->lrp->nac->marR->marA->sodA
+nsrR->lrp->stpA->leuO->yjjQ->flhD->fliZ->gadE->gadX->hns->ybdZ
 }
 ")
-plot(fur.sodA)
+plot(fur.ybdZ)

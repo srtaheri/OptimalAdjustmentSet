@@ -1,0 +1,1362 @@
+(print-back-door-dagitty "../data/b0683-b3908-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3908" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3207-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3207" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1611-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1611" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1256-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1256" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1415-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1415" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1276-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1276" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1101-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1101" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1973-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1973" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4637-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4637" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0853-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0853" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0852-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0852" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0851-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0851" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0850-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0850" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1530-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1530" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1531-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1531" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1532-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1532" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1611-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1611" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3908-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3908" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0871-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0871" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1857-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1857" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1593-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1593" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4299-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4299" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2236-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2236" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3092-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3092" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3707-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3707" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3709-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3709" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3708-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3708" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3118-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3118" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0726-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0726" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2707-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2707" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3864-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3864" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1981-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1981" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0721-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0721" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3170-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3170" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4376-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4376" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3405-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3405" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1377-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1377" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0929-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0929" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0957-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0957" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3169-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3169" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0192-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0192" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3222-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3222" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3225-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3225" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0109-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0109" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2392-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2392" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2150-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2150" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2149-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2149" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3171-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3171" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3828-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3828" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3829-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3829" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3513-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3513" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1530-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1530" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0168-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0168" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1622-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1622" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1620-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1620" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3942-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3942" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3670-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3670" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4000-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4000" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0106-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0106" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4172-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4172" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0475-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0475" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0369-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0369" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3500-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3500" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0720-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0720" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3926-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3926" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2905-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2905" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2094-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2094" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3516-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3516" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3512-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3512" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2800-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2800" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4367-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4367" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1385-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1385" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3093-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3093" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0604-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0604" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1189-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1189" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2535-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2535" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2659-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2659" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4213-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4213" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0034-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0034" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3721-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3721" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3336-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3336" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1901-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1901" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2841-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2841" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2957-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2957" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0110-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0110" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0605-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0605" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4014-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4014" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1445-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1445" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1339-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1339" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1384-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1384" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1761-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1761" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2663-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2663" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2662-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2662" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2661-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2661" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2393-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2393" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2913-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2913" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3212-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3212" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3213-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3213" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3214-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3214" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1593-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1593" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1445-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1445" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1778-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1778" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1852-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1852" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1761-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1761" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0167-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0167" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0613-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0613" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0614-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0614" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0615-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0615" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0616-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0616" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0617-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0617" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0618-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0618" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0620-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0620" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0619-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0619" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3365-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3365" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3366-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3366" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3367-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3367" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3368-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3368" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2241-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2241" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2242-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2242" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2243-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2243" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2239-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2239" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2240-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2240" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3942-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3942" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2492-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2492" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2491-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2491" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2490-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2490" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2489-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2489" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2488-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2488" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2487-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2487" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2486-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2486" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2485-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2485" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2484-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2484" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2483-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2483" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2482-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2482" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2481-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2481" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4123-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4123" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1276-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1276" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1182-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1182" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3517-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3517" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3230-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3230" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3231-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3231" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0034-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0034" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0044-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0044" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0043-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0043" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0042-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0042" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0041-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0041" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0903-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0903" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0904-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0904" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3212-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3212" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3213-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3213" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3214-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3214" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3518-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3518" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3908-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3908" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2957-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2957" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2276-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2276" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2277-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2277" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2278-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2278" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2279-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2279" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2280-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2280" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2281-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2281" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2282-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2282" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2283-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2283" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2284-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2284" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2285-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2285" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2286-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2286" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2287-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2287" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2288-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2288" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0035-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0035" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0036-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0036" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0037-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0037" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0038-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0038" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0039-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0039" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0040-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0040" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4471-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4471" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3113-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3113" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3114-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3114" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3115-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3115" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3116-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3116" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3117-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3117" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3118-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3118" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2903-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2903" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2904-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2904" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2905-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2905" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4122-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4122" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4138-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4138" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4139-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4139" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0428-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0428" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0429-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0429" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0430-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0430" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0431-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0431" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0432-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0432" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4764-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4764" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0721-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0721" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0722-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0722" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0723-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0723" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0724-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0724" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0726-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0726" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0727-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0727" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0728-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0728" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0729-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0729" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1611-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1611" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1612-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1612" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1415-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1415" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0871-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0871" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0872-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0872" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0873-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0873" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3091-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3091" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3092-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3092" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3516-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3516" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3072-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3072" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b4124-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b4124" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b1256-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b1256" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0113-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0113" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0114-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0114" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0115-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0115" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0116-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0116" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2579-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2579" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2507-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2507" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2508-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2508" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2903-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2903" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2904-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2904" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2905-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2905" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0605-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0605" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b0606-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b0606" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3829-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3829" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b3828-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b3828" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)
+(print-back-door-dagitty "../data/b0683-b2942-back-door.tab"  
+        (gethash "b0683" *blattner*)
+        (gethash "b2942" *blattner*)
+        (get-class-all-instances '|Genes|)
+        1
+        #'get-symbol)

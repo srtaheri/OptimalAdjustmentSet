@@ -357,6 +357,21 @@
     paths))
 
 
+(defun find-alternate-path (graph start end exclude-path)
+  (let ((queue (list (list start))))
+    (loop while queue
+	  for path = (pop queue)
+	  for node = (car (last path))
+	  do (cond ((and (fequal node end)
+			 (not (intersection exclude-path path :test #'fequal)))
+
+		    (return path))
+		   ((fequal node end)
+		    (loop-finish))
+
+		   (t (loop for next-node in (cdr (assoc node graph :test #'fequal))
+		      unless (member next-node path :test #'fequal)
+		      do (push (append path (list next-node)) queue)))))))
 
 
 (defun find-next-path (graph start end found-paths)
@@ -461,21 +476,20 @@
 				      (mapcar name-func path)))))))
 
 
-(defun print-back-door-dagitty (filename cause effect genes n name-func)
+(defun print-back-door-dagitty (filename cause effect genes name-func)
   (tofile filename
 	  (format t "~A.~A <- dagitty(\"~%dag {~%" (get-symbol cause) (get-symbol effect))
 	  (let* ((confounders (get-confounders cause effect))
 		 (regnet (get-full-regnet genes)))
-	    (loop for path in (find-n-paths regnet cause effect n)
-		  do (format t "~{~A~^->~}~%"
-			     (mapcar name-func path)))
+	    (format t "~A->~A~%" (get-symbol cause) (get-symbol effect))
 	    (loop for node in confounders
-		  do (loop for path in (find-n-paths regnet node cause n)
-			   do (format t "~{~A~^->~}~%"
-				      (mapcar name-func path)))
-		     (loop for path in (find-n-paths regnet node effect n)
-			   do (format t "~{~A~^->~}~%"
-				      (mapcar name-func path)))))
+		  for confounder-cause-path = (find-alternate-path regnet node cause '(effect))
+		  for confounder-effect-path =  (find-alternate-path regnet node effect '(cause))
+		  when (and confounder-cause-path confounder-effect-path)
+		  do (format t "~{~A~^->~}~%"
+			     (mapcar name-func confounder-cause-path))
+		     (format t "~{~A~^->~}~%"
+				      (mapcar name-func confounder-effect-path))))
 	  (format t "}~%\")~%plot(~A.~A)" (get-symbol cause) (get-symbol effect))))
 
 
