@@ -461,6 +461,24 @@
 				      (mapcar name-func path)))))))
 
 
+(defun print-back-door-dagitty (filename cause effect genes n name-func)
+  (tofile filename
+	  (format t "~A.~A <- dagitty(\"~%dag {~%" (get-symbol cause) (get-symbol effect))
+	  (let* ((confounders (get-confounders cause effect))
+		 (regnet (get-full-regnet genes)))
+	    (loop for path in (find-n-paths regnet cause effect n)
+		  do (format t "~{~A~^->~}~%"
+			     (mapcar name-func path)))
+	    (loop for node in confounders
+		  do (loop for path in (find-n-paths regnet node cause n)
+			   do (format t "~{~A~^->~}~%"
+				      (mapcar name-func path)))
+		     (loop for path in (find-n-paths regnet node effect n)
+			   do (format t "~{~A~^->~}~%"
+				      (mapcar name-func path)))))
+	  (format t "}~%\")~%plot(~A.~A)" (get-symbol cause) (get-symbol effect))))
+
+
 (defun get-full-regnet (genes)
   (loop for gene in genes
 	for regulatees = (remove gene (genes-regulated-by-gene gene) :test #'fequal)
