@@ -1,18 +1,6 @@
 fur.nohA <- dagitty("
 dag {
 fur->nohA
-btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->nohA
-rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->nohA
-basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->nohA
-alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->nohA
-glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->nohA
-nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur
-nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur->nohA
 }
 ")
 plot(fur.nohA)

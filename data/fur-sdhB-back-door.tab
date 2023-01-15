@@ -2,17 +2,17 @@ fur.sdhB <- dagitty("
 dag {
 fur->sdhB
 btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->sdhB
+btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->phoB->cra->crp->sdhB
 rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->sdhB
+rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->phoB->cra->crp->sdhB
 basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->sdhB
+basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->phoB->cra->crp->sdhB
 alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->sdhB
+alpA->phoB->cra->crp->sdhB
 glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->sdhB
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->phoB->cra->crp->sdhB
 nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur
-nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur->sdhB
+nsrR->lrp->nac->phoB->cra->crp->sdhB
 }
 ")
 plot(fur.sdhB)

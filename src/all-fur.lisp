@@ -2,5 +2,5 @@
       do (print-back-door-dagitty (format nil "../data/fur-~A-back-door.tab" (get-symbol effect))
 	(gethash "fur" *genes*)
 	effect
-	(get-class-all-instances '|Genes|)
+	*regnet*
 	#'get-symbol))

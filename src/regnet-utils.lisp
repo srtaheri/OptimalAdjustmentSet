@@ -337,7 +337,7 @@
   (mapcar #'get-frame-name (set-difference
 			    (intersection
 			     (genes-indirectly-regulating-gene-w-caching cause)
-			     (genes-indirectly-regulating-gene-w-caching effect)
+			     (genes-indirectly-regulating-gene effect (list cause))
 			     :test #'fequal)
 			    (genes-indirectly-regulated-by-gene-w-caching cause)
 			    :test #'fequal)))
@@ -362,16 +362,12 @@
     (loop while queue
 	  for path = (pop queue)
 	  for node = (car (last path))
-	  do (cond ((and (fequal node end)
-			 (not (intersection exclude-path path :test #'fequal)))
-
-		    (return path))
-		   ((fequal node end)
-		    (loop-finish))
-
-		   (t (loop for next-node in (cdr (assoc node graph :test #'fequal))
-		      unless (member next-node path :test #'fequal)
-		      do (push (append path (list next-node)) queue)))))))
+	  do (if (fequal node end)
+		 (return path)
+		 (loop for next-node in (cdr (assoc node graph :test #'fequal))
+		       unless (or (member next-node exclude-path :test #'fequal)
+				  (member next-node path :test #'fequal))
+			 do (push (append path (list next-node)) queue))))))
 
 
 (defun find-next-path (graph start end found-paths)
@@ -476,15 +472,14 @@
 				      (mapcar name-func path)))))))
 
 
-(defun print-back-door-dagitty (filename cause effect genes name-func)
+(defun print-back-door-dagitty (filename cause effect regnet name-func)
   (tofile filename
 	  (format t "~A.~A <- dagitty(\"~%dag {~%" (get-symbol cause) (get-symbol effect))
-	  (let* ((confounders (get-confounders cause effect))
-		 (regnet (get-full-regnet genes)))
+	  (let* ((confounders (get-confounders cause effect)))
 	    (format t "~A->~A~%" (get-symbol cause) (get-symbol effect))
 	    (loop for node in confounders
-		  for confounder-cause-path = (find-alternate-path regnet node cause '(effect))
-		  for confounder-effect-path =  (find-alternate-path regnet node effect '(cause))
+		  for confounder-cause-path = (find-alternate-path regnet node cause (list effect))
+		  for confounder-effect-path =  (find-alternate-path regnet node effect (list cause))
 		  when (and confounder-cause-path confounder-effect-path)
 		  do (format t "~{~A~^->~}~%"
 			     (mapcar name-func confounder-cause-path))

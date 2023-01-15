@@ -8,9 +8,9 @@ rcdA->csgD->fliZ->gadE->gadX->hns->gspE
 basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
 basR->csgD->fliZ->gadE->gadX->hns->gspE
 alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->gspE
+alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->slyA->gspE
 glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->gspE
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->slyA->gspE
 nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur
 nsrR->lrp->stpA->leuO->yjjQ->flhD->fliZ->gadE->gadX->hns->gspE
 }

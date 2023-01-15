@@ -1,0 +1,6 @@
+fur.exbD <- dagitty("
+dag {
+fur->exbD
+}
+")
+plot(fur.exbD)

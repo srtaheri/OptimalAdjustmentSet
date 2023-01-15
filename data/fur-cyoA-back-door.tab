@@ -2,15 +2,15 @@ fur.cyoA <- dagitty("
 dag {
 fur->cyoA
 btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->cyoA
+btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->pdhR->cyoA
 rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->cyoA
+rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->pdhR->cyoA
 basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
-basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur->cyoA
+basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->pdhR->cyoA
 alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
 alpA->phoB->cusR->cyoA
 glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
-glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur->cyoA
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->pdhR->cyoA
 nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur
 nsrR->lrp->stpA->leuO->yjjQ->flhD->fliZ->gadE->cyoA
 }
