@@ -1,0 +1,12 @@
+fur.hmp <- dagitty("
+dag {
+fur->hmp
+alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
+alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->metR->hmp
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->metR->hmp
+nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur
+nsrR->hmp
+}
+")
+plot(fur.hmp)
