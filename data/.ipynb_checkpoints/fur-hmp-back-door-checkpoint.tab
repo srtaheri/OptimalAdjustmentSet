@@ -1,0 +1,18 @@
+fur.hmp <- dagitty("
+dag {
+fur->hmp
+btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
+btsR->csgD->fliZ->gadE->gadX->hns->lrp->nac->metR->hmp
+rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
+rcdA->csgD->fliZ->gadE->gadX->hns->lrp->nac->metR->hmp
+basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->ompR->acrR->soxR->soxS->fur
+basR->csgD->fliZ->gadE->gadX->hns->lrp->nac->metR->hmp
+alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
+alpA->phoB->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->metR->hmp
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->ompR->acrR->soxR->soxS->fur
+glaR->gadW->gadX->hns->bolA->csgD->fliZ->gadE->lrp->nac->metR->hmp
+nsrR->lrp->nac->ompR->acrR->soxR->soxS->fur
+nsrR->hmp
+}
+")
+plot(fur.hmp)
